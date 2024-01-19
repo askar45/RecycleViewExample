@@ -13,13 +13,13 @@ class UsersService {
     init {
         val faker = Faker.instance()
         IMAGES.shuffle()
-        val generetedUsers:List<User> = (1..100).map {User(
+        users = (1..100).map {User(
             id = it.toLong(),
             name = faker.name().name(),
             company = faker.company().name(),
             photo = IMAGES[it % IMAGES.size]
         )
-        }
+        }.toMutableList()
     }
 
     fun getUsers(): List<User>{
