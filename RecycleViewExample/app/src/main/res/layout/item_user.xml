@@ -24,9 +24,22 @@
         android:layout_marginStart="16dp"
         android:lines="1"
         android:ellipsize="end"
-        android:text="John de Smith"
+        android:text="John deh Smith"
         app:layout_constraintTop_toTopOf="@id/photoImageView"
         app:layout_constraintStart_toEndOf="@id/photoImageView"
+        app:layout_constraintEnd_toStartOf="@id/moreImageViewButton"/>
+
+    <TextView
+        android:id="@+id/userCompanyTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="Google Inc"
+        app:layout_constraintTop_toBottomOf="@id/userNameTextView"
+        app:layout_constraintStart_toStartOf="@id/userNameTextView"
         app:layout_constraintEnd_toStartOf="@id/moreImageViewButton"/>
 
     <ImageView
@@ -40,6 +53,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="photoImageView,userCompanyTextView"
+        app:barrierDirection="bottom"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
